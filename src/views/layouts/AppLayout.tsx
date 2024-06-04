@@ -1,9 +1,11 @@
 import { Outlet } from "react-router-dom";
+import { Header } from "./components";
 
 const AppLayout = () => {
   return (
     <div className="h-screen w-full">
-      <div className="flex">
+      <Header />
+      <div className="p-5">
         <Outlet />
       </div>
     </div>
