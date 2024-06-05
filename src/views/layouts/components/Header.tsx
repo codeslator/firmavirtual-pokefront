@@ -6,8 +6,6 @@ import FirmaVirtualLogo from '../../assets/images/firmavirtual-logo.png';
 interface HeaderProps { }
 
 const Header: FC<HeaderProps> = ({ }) => {
-
-
   return (
     <Navbar className="bg-base-300 shadow-2xl">
       <div className="flex-1">
@@ -18,7 +16,7 @@ const Header: FC<HeaderProps> = ({ }) => {
       <div className="flex-none">
         <Menu horizontal={true} className="px-1">
           <Menu.Item>
-            <NavLink to="/">Go to Home</NavLink>
+            <NavLink to="/">Ir al Inicio</NavLink>
           </Menu.Item>
         </Menu>
       </div>

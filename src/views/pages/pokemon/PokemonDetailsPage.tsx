@@ -19,7 +19,7 @@ const PokemonDetailsPage = () => {
       {isFetching && (<HorizontalCardSkeleton />)}
       {pokemon && (<PokemonInfoCard pokemon={pokemon} />)}
       <Button color="accent" onClick={goBack}>
-        Go Back
+        Regresar
       </Button>
     </div>
   );

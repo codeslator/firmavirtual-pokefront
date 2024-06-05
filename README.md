@@ -1,30 +1,71 @@
-# React + TypeScript + Vite
+# FirmaVirtual PokeFront
+Technical Test by **FirmaVirtual Mexico** - @codeslator (Andres Melendez) - WebApp built with **React + Vite + TypeScript** using **TailwindCSS + DaisyUI** to develop UI components and **TanStack React Query** to make requests to **FirmaVirtual PokeAPI**.
+## Requirements
+To run this app, you must have installed Node & NPM.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+This README has the instructions to install and execute this webapp. The first step is clone the repository from **GitHub**.
+```bash
+git https://github.com/codeslator/firmavirtual-pokefront.git
 ```
+After clone the repository, you must to install all dependencies.
+```bash
+cd firmavirtual-pokefront
+npm install
+```
+ When dependencies are installed, before run the webapp in local, make sure you have the `.env` file in the repository with the following variables:
+ ```
+VITE_FIRMAVIRTUAL_API_URL=http://localhost:3000
+```
+After add environment variables, you can execute the Vite App using the following command:
+```bash
+npm run dev
+```
+If application started correctly, will be listen in **5173** port. Open in your Browser the following URL: `http://localhost:5173/`. Now the **React** created with **Vite** is running. Great!
+Finally, you can start to navigate in the webapp. **Good job!**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Directory Structure
+The WebApp project has the following directory structure:
+```
+├── src
+│   ├── apis
+│   │   ├── firmaVirtualApi.ts
+│   │   └── index.ts
+│   ├── global
+│   │   ├── ...
+│   │   └── index.ts
+│   ├── hooks
+│   │   ├── ...
+│   │   └── index.ts
+│   ├── interfaces
+│   │   ├── ...
+│   │   └── index.ts
+│   ├── router
+│   │   ├── ...
+│   │   └── index.tsx
+│   ├── services
+│   │   ├── ...
+│   │   └── index.ts
+│   ├── views
+│   │   ├── assets
+│   │   ├── common
+│   │   ├── components
+│   │   ├── layouts
+│   │   └── pages
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+├── .env
+├── ...
+├── index.html
+├── docker-compose.yml
+├── package.json
+├── postcss.config.json
+├── tailwind.config.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── README.md
+└── vite.config.ts
+```
+This was part of the developement of this Technical Test. **I hope you like it!** Thanks for this opportunity and sorry for delay.
