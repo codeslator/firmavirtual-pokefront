@@ -28,13 +28,15 @@ export default {
           rock: "#afa981",
           steel: "#60a1b8",
           water: "#2980ef",
-          stellar: "#ffffff",
-        }
+        },
       }
     },
   },
   plugins: [
     require('daisyui')
   ],
+  safelist: [{
+    pattern: /(bg|text|border)-pokemon-(bug|dark|dragon|electric|fighting|fire|flying|ghost|grass|ground|ice|normal|poison|psychic|rock|steel|water)/
+  }]
 }
 

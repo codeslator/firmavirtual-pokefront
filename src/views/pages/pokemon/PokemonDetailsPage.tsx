@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
+import { Button } from "react-daisyui";
 import { usePokemonDetails } from "../../../hooks";
 import { PokemonInfoCard } from "../../components";
-import { Button, Skeleton } from "react-daisyui";
 import { ROUTES } from "../../../global";
 import { HorizontalCardSkeleton } from "../../common";
 

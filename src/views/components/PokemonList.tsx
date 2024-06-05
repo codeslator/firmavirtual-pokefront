@@ -32,7 +32,7 @@ const PokemonList: FC<PokemonListProps> = ({ }) => {
     setLimit(offset);
   };
 
-  console.log(data)
+  
   return (
     <>
       <div className="my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 grid-flow-row gap-4">
