@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { PATHS } from '../global';
-import { HomePage, PokemonPage } from '../views/pages';
+import { HomePage, PokemonDetailsPage, PokemonPage } from '../views/pages';
 import { AppLayout, HomeLayout } from '../views/layouts';
 
 export const router = createBrowserRouter([
@@ -21,7 +21,11 @@ export const router = createBrowserRouter([
       {
         path: PATHS.POKEMON,
         element: <PokemonPage />,
-      }
+      },
+      {
+        path: `${PATHS.POKEMON}/:id`,
+        element: <PokemonDetailsPage />,
+      },
     ]
   },
 ]);

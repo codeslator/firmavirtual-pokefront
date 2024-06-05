@@ -2,14 +2,25 @@ import { FC } from 'react';
 import { Card, Progress } from 'react-daisyui';
 import PokemonTypeBadge from './PokemonTypeBadge';
 import { Pokemon, Type } from '../../interfaces';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../global';
 
 interface PokemonItemProps {
   pokemon: Pokemon;
 }
 
 const PokemonItem: FC<PokemonItemProps> = ({ pokemon }) => {
+  const navigate = useNavigate();
+
+  const goToPokemonDetails = () => {
+    navigate(`${ROUTES.POKEMON}/${pokemon.id}`)
+  }
+
   return (
-    <Card className="border border-gray-200 shadow-md  dark:border-gray-700">
+    <Card
+    className="border border-gray-200 shadow-md  dark:border-gray-700 hover:bg-zinc-900 hover:bg-opacity-50 hover:cursor-pointer hover:shadow-xl hover:transition ease delay-100"
+    onClick={goToPokemonDetails}
+    >
       <Card.Image src={pokemon.image_url} alt="Shoes" />
       <Card.Body>
         <Card.Title tag="h3">

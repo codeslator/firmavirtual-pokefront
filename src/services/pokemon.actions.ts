@@ -1,5 +1,5 @@
 import { firmaVirtualApi } from "../apis";
-import { PokemonResults } from "../interfaces";
+import { Pokemon, PokemonResults } from "../interfaces";
 
 export type OrderType = 'ASC' | 'DESC';
 
@@ -19,5 +19,11 @@ export const getAllPokemon = async ({ page, limit, sort = 'id', order = 'ASC' }:
   });
   console.log(params.toString());
   const { data } = await firmaVirtualApi.get<PokemonResults>(`/pokemon?${params}`);
+  return data;
+};
+
+
+export const getPokemonById = async (id: number): Promise<Pokemon> => {
+  const { data } = await firmaVirtualApi.get<Pokemon>(`/pokemon/${id}`);
   return data;
 };

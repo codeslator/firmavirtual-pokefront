@@ -3,12 +3,14 @@ import { PokemonItem } from '.';
 import { usePokemon } from '../../hooks';
 import { Pokemon } from '../../interfaces';
 import { Button } from 'react-daisyui';
+import { VerticalCardSkeleton } from '../common';
 
 interface PokemonListProps { }
 
 const PokemonList: FC<PokemonListProps> = ({ }) => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(6);
+  const { data, isFetching } = usePokemon({ page, limit });
 
   const handleNextPage = () => {
     setPage(page + 1);
@@ -28,16 +30,30 @@ const PokemonList: FC<PokemonListProps> = ({ }) => {
 
   const handleLimit = (offset: number) => {
     setLimit(offset);
-  }
+  };
 
-  const { data } = usePokemon({ page, limit });
   console.log(data)
   return (
     <>
       <div className="my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 grid-flow-row gap-4">
-        {data?.results?.map((pokemon: Pokemon) => (
-          <PokemonItem key={pokemon.id} pokemon={pokemon} />
-        ))}
+        {isFetching && (
+          <>
+            <VerticalCardSkeleton />
+            <VerticalCardSkeleton />
+            <VerticalCardSkeleton />
+            <VerticalCardSkeleton />
+            <VerticalCardSkeleton />
+            <VerticalCardSkeleton />
+          </>
+        )}
+        {(data.results.length > 0) && (
+          <>
+            {data.results.map((pokemon: Pokemon) => (
+              <PokemonItem key={pokemon.id} pokemon={pokemon} />
+            ))}
+          
+          </>
+        )}
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div>
